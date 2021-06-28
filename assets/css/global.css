@@ -12,7 +12,8 @@
 
 body {
 	font-family: "Inter", sans-serif;
-	@apply text-text bg-background;
+background: rgb(2,0,36);
+background: linear-gradient(124deg, rgba(2,0,36,1) 37%, rgba(8,22,88,0.9752275910364145) 100%, rgba(0,212,255,1) 100%);
 }
 
 .font-rajdhani {
