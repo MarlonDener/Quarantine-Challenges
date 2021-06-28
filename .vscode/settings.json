@@ -1,0 +1,6 @@
+{
+    "vetur.format.defaultFormatter.ts": "none",
+    "editor.defaultFormatter": "octref.vetur",
+    "javascript.format.enable": false,
+    "vetur.format.defaultFormatter.js": "none"
+}
