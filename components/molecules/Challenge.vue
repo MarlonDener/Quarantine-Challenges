@@ -39,7 +39,26 @@ export default Vue.extend<unknown, any, unknown, ChallengesType>({
     description: { type: String, required: true },
     amount: { type: Number, required: true }
   },
-	computed: mapState('Challengers', ['level', 'xp', 'completedChallenges']),
+  computed: mapState('Challengers', ['level', 'xp', 'completedChallenges']),
+  methods: {
+    ...mapMutations({
+      resetTime: `Countdown/${CountdownMT.SET_TIME}`,
+      setCountdownHasCompleted: `Countdown/${CountdownMT.SET_HAS_COMPLETED}`,
+      setCountdownIsActive: `Countdown/${CountdownMT.SET_IS_ACTIVE}`,
+      setCurrentChallengeIndex: `Challengers/${ChallengesMT.SET_CURRENT_CHALLENGE_INDEX}`,
+      completeChallenge: `Challengers/${ChallengesMT.COMPLETE_CHALLENGE}`
+    }),
+    resetChallenges () {
+      this.resetTime()
+      this.setCountdownIsActive(false)
+      this.setCountdownHasCompleted(false)
+      this.setCurrentChallengeIndex(null)
+    },
+    challengeSucceeded () {
+      this.resetChallenges()
+      this.completeChallenge(this.amount)
+    }
+  }
 
 })
 
