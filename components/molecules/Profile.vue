@@ -6,10 +6,10 @@
       class="mr-6 w-20 h-20 rounded-full"
     />
     <div class="flex flex-col w-full">
-      <strong class="text-title text-2xl">Marlon Dener</strong>
-      <p class="flex items-center">
+      <strong class="text-white text-2xl font-medium">Marlon Dener</strong>
+      <p class="flex items-center mt-2">
         <img src="icons/level.svg" alt="level" class="mr-2" />
-        <span class="text-base">Level {{ level }}</span>
+        <span class="text-white font-bold">Level {{ level }}</span>
       </p>
     </div>
   </div>

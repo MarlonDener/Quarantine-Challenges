@@ -11,7 +11,7 @@
     "
   >
     <CountdownDigits :digits="minutes" />
-    <span class="bg-background px-2">:</span>
+    <span class="text-blue px-2">:</span>
     <CountdownDigits :digits="seconds" />
   </div>
 </template>
