@@ -27,9 +27,9 @@ Projeto desenvolvido com o framework Vue.js e Nuxt.js, além de outras tecnologi
 ## 🎨 Layout
 ### Mobile
 
-<p align="center" style="width: 200px">
+<p align="center">
 	
- ![image](https://user-images.githubusercontent.com/70349830/123726263-0f4e8500-d866-11eb-8919-c0c9fd366862.png)
+![image](https://user-images.githubusercontent.com/70349830/123734581-fbaa1b00-d873-11eb-83ae-9eb77c3c29e4.png)
 	
 </p>
 
