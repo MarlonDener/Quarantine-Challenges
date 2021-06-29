@@ -44,17 +44,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { mapState, mapMutations } from 'vuex'
-import { Mutations } from '~/store/Challengers/types'
+import Vue from "vue";
+import { mapState, mapMutations } from "vuex";
+import { Mutations } from "~/store/Challengers/types";
 
 export default Vue.extend({
-  computed: mapState('Challengers', ['level', 'isLevelUpModalOpen']),
-  methods: mapMutations('Challengers', {
-    setModalState: Mutations.SET_IS_LEVEL_UP_MODAL_OPEN
-  })
-})
-
+  computed: {
+    ...mapState("Challengers", ["level", "isLevelUpModalOpen", "isName"]),
+  },
+  methods: {
+    ...mapMutations("Challengers", {
+      setModalState: Mutations.SET_IS_LEVEL_UP_MODAL_OPEN,
+    }),
+  },
+});
 </script>
 
 <style scoped>

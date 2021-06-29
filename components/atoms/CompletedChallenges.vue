@@ -11,8 +11,8 @@
       font-medium
     "
   >
-    <p class="text-lg">Desafios completos</p>
-    <p class="text-2x">{{ completedChallenges }}</p>
+    <p class="text-lg text-white">Desafios completos</p>
+    <p class="text-2x text-white font-bold">{{ completedChallenges }}</p>
   </div>
 </template>
 

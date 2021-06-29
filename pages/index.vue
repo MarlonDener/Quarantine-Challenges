@@ -34,19 +34,23 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 
-import { mapState, mapGetters, mapMutations } from 'vuex'
-import { Mutations as ChallengesMT} from '~/store/Challengers/types'
-import { Mutations as CountdownMT } from '~/store/Countdown/types'
-import CompletedChallenges from '~/components/atoms/CompletedChallenges.vue'
-import Profile from '~/components/molecules/Profile.vue'
-import Countdown from '~/components/molecules/Countdown.vue'
+import { mapState, mapGetters, mapMutations } from "vuex";
+import { Mutations as ChallengesMT } from "~/store/Challengers/types";
+import { Mutations as CountdownMT } from "~/store/Countdown/types";
+import CompletedChallenges from "~/components/atoms/CompletedChallenges.vue";
+import Profile from "~/components/molecules/Profile.vue";
+import Countdown from "~/components/molecules/Countdown.vue";
 
-import Card from '~/components/organisms/Card.vue';
+import Card from "~/components/organisms/Card.vue";
 
-
-import { playAudio, sendNotification, getRandomNumber, scrollToElement } from '~/utils'
+import {
+  playAudio,
+  sendNotification,
+  getRandomNumber,
+  scrollToElement,
+} from "~/utils";
 
 type Head = {
   title: string;
@@ -57,24 +61,24 @@ export default Vue.extend({
     CompletedChallenges,
     Profile,
     Countdown,
-		Card
+    Card,
   },
-  head (): Head {
+  head(): Head {
     return {
-      title: 'Home | movue.it'
-    }
+      title: "Home | movue.it",
+    };
   },
   computed: {
-    ...mapState('Countdown', {
-      hasCountDownCompleted: 'hasCompleted',
-      isCountdownActive: 'isActive'
+    ...mapState("Countdown", {
+      hasCountDownCompleted: "hasCompleted",
+      isCountdownActive: "isActive",
     }),
 
-  ...mapGetters('Challengers', ['challengesLength'])
+    ...mapGetters("Challengers", ["challengesLength"]),
   },
-  mounted () {
-    if ('Notification' in window) {
-      Notification.requestPermission()
+  mounted() {
+    if ("Notification" in window) {
+      Notification.requestPermission();
     }
   },
 
@@ -82,28 +86,28 @@ export default Vue.extend({
     ...mapMutations({
       setCountdownHasCompleted: `Countdown/${CountdownMT.SET_HAS_COMPLETED}`,
       setCountdownIsActive: `Countdown/${CountdownMT.SET_IS_ACTIVE}`,
-			setCurrentChallengeIndex: `Challengers/${ChallengesMT.SET_CURRENT_CHALLENGE_INDEX}`
+      setCurrentChallengeIndex: `Challengers/${ChallengesMT.SET_CURRENT_CHALLENGE_INDEX}`,
     }),
-    setCountdownState (flag: boolean) {
-      this.setCountdownHasCompleted(false)
-      this.setCountdownIsActive(flag)
+    setCountdownState(flag: boolean) {
+      this.setCountdownHasCompleted(false);
+      this.setCountdownIsActive(flag);
     },
-    getNewChallenge () {
-			const index = getRandomNumber(0, this.challengesLength)
+    getNewChallenge() {
+      const index = getRandomNumber(0, this.challengesLength);
       this.setCountdownHasCompleted(true);
-			this.setCurrentChallengeIndex(index);
+      this.setCurrentChallengeIndex(index);
 
-      if (Notification?.permission === 'granted') {
-        playAudio('/notification.mp3')
-        sendNotification('Novo desafio', {
-          body: 'Um novo desafio vai começar, bora completar !!',
-          icon: '/favicon.png'
-        })
+      if (Notification?.permission === "granted") {
+        playAudio("/notification.mp3");
+        sendNotification("Novo desafio", {
+          body: "Um novo desafio vai começar, bora completar !!",
+          icon: "/favicon.png",
+        });
       }
-			this.$nextTick(() => {
-				scrollToElement('#challenge');
-			})
-    }
-  }
-})
+      this.$nextTick(() => {
+        scrollToElement("#challenge");
+      });
+    },
+  },
+});
 </script>
