@@ -3,6 +3,7 @@
 </h1>
 <h3 align="center">
  (Vue + Nuxt + TailwindCSS + Typescript)
+	
 </h3>
 <h4 align="center">
 	Acesse a demo:
