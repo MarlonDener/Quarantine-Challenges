@@ -8,9 +8,7 @@
 <h4 align="center">
 	Acesse a demo:
 	<a href="https://quarantine-challenges-marlondener.vercel.app/">
-		Quarantine-Challenges
-
-	</a>
+		Quarantine-Challenges</a>
 </h4>
 
 ## 💻 Sobre o projeto
