@@ -37,6 +37,7 @@ Projeto desenvolvido com o framework Vue.js e Nuxt.js, além de outras tecnologi
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center" style="width: 400px">
 	
+	
 ![image](https://user-images.githubusercontent.com/70349830/123734169-39f30a80-d873-11eb-8df6-2a3bfceea604.png)
 	
 </p>
