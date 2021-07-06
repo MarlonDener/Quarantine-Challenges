@@ -15,6 +15,7 @@
 
 Quarantine Challenges - é uma aplicação que permite você executar a técnica de Pomodoro para focar nas suas atividades. Ao final de cada ciclo, um desafio lhe é proposto para que você descanse e se exercite.
 
+
 Projeto desenvolvido com o framework Vue.js e Nuxt.js, além de outras tecnologias front end.
 
 ---
